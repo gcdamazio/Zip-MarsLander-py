@@ -18,7 +18,7 @@ class Vehicle:
     def __init__(self, initial_altitude):
         # initialize the altitude AND previous altitude to initialAltitude
 
-        self.altitude = initial_altitude 
+        self.altitude = initial_altitude
         self.prev_altitude = initial_altitude
 
         self.velocity= 1000
@@ -59,7 +59,7 @@ class Vehicle:
         self.burn = burnAmount
         self.prev_altitude = self.altitude
         self.velocity = self.compute_deltaV()
-        self.altitude = self.altitude - self.velocity
+        self.altitude = self.altitude - self.velocity 
         self.fuel = self.fuel - burnAmount
 
 

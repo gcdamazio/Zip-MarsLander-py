@@ -9,19 +9,21 @@ class OnBoardComputer:
 
         velocity = status.get_velocity()
         altitude = status.get_altitude()
-        fuel = status.fuel()
-        
-        burn = 0
+       #print ("altitude ", altitude)
+        # fuel = status.fuel()
 
-        if status.get_altitude() > 1000:
-            if status.get_velocity() > 200:
+        burn = 0
+        if status.get_altitude() > 8000:
+            burn = 100
+        elif 8000>=status.get_altitude() > 1000:
+            if status.get_velocity() >= 200:
                 burn = 200
             elif 200 > status.get_velocity() >=100 :
                 burn = 100
-        elif 1000 > status.get_altitude() >= 200:
+        elif 1000 >= status.get_altitude() > 200:
             if status.get_velocity() == 100:
                 burn = 100
-        elif 200 > status.get_altitude() >= 50:
+        elif 200 >= status.get_altitude() >= 50:
             if status.get_velocity() == 100:
                 burn = 175
             if status.get_velocity() == 25:
@@ -38,5 +40,5 @@ class OnBoardComputer:
                 burn = 100
 
 
-        print(burn)  # hack!
+        #print(burn)  # hack!
         return burn

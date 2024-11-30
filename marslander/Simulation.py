@@ -76,7 +76,7 @@ class Simulation:
     @staticmethod
     def main():
         # create a new BurnInputStream
-        burnSource = BurnInputStream()
+        burnSource = OnBoardComputer()
         # create a new Simulation object with a random starting altitude
         game = Simulation(Vehicle(Simulation.random_altitude()))
         # pass the new BurnInputStream to the run_simulation method
